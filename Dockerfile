@@ -11,7 +11,7 @@ ENV HTTPD_CONTAINER_SCRIPTS_PATH=/container-scripts/ \
     HTTPD_VAR_RUN=/run/httpd
 
 RUN yum install -y yum-utils epel-release && \
-    INSTALL_PKGS="httpd nss_wrapper gettext" && \
+    INSTALL_PKGS="httpd nss_wrapper gettext tcpdump" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     yum -y clean all --enablerepo='*'
